@@ -1,0 +1,35 @@
+{
+  "name": "markdown-editor-armv7",
+  "version": "1.0.0",
+  "description": "Editor de Markdown optimizado para ARM v7",
+  "main": "dist/server.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc && npm run build:frontend",
+    "build:frontend": "esbuild src/frontend/main.ts --bundle --outfile=public/js/app.js --platform=browser --target=es2020",
+    "dev": "concurrently \"tsc --watch\" \"npm run dev:frontend\" \"nodemon dist/server.js\"",
+    "start": "node dist/server.js",
+    "test": "jest",
+    "lint": "eslint src/**/*.ts"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "ws": "^8.14.2",
+    "helmet": "^7.0.0",
+    "express-rate-limit": "^6.10.0",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "marked": "^9.1.2",
+    "dompurify": "^3.0.5",
+    "jsdom": "^22.1.0",
+    "chokidar": "^3.5.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.0",
+    "@types/express": "^4.17.17",
+    "typescript": "^5.2.2",
+    "esbuild": "^0.19.4",
+    "concurrently": "^8.2.1",
+    "nodemon": "^3.0.1"
+  }
+}

@@ -1,0 +1,11 @@
+node_modules/
+dist/
+public/js/app.js
+.env
+data/
+config/
+nginx/logs/
+nginx/ssl/
+backups/
+coverage/
+*.log
